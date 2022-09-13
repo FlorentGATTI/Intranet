@@ -1,0 +1,21 @@
+.wrapper {
+    padding: 5px 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.wrapper .formInput {
+    margin: 20px 0;
+}
+
+.errorMsg {
+    color: red;
+    font-size: 14px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
