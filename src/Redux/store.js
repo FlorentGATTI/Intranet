@@ -1,12 +1,15 @@
-import {createStore, applyMiddleware, combineReducers} from 'redux';
 import collabReducer from './features/collabReducer'
-import thunk from 'redux-thunk'
+import connexReducer from './features/collabReducer';
+import { configureStore } from '@reduxjs/toolkit'
 
+export const store = configureStore({
+  reducer: {
+    collab : collabReducer,
+    connex : connexReducer
+  },
 
-const rootReducer = combineReducers({
-    collabReducer
 })
 
-const store = createStore(rootReducer, applyMiddleware(thunk))
+
 
 export default store;

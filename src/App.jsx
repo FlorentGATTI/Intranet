@@ -5,7 +5,7 @@ import Connexion from "./Pages/Connexion/Connexion";
 import Listing from "./Pages/Listing/Listing";
 import Navbar from "./Components/Navbar/Navbar";
 import Infos from "./Pages/InfosPersonel/Infos";
-import "./App.css";
+import "./styles/App.css";
 import CreateUser from "./Pages/CreateUsers/CreateUser";
 
 function App() {
@@ -13,9 +13,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
           <Navbar />
-
         <Routes>
-
           <Route path="/" element={<Connexion />} />
           <Route path="Home" element={<Home />} />
           <Route path="Listing" element={<Listing />} />

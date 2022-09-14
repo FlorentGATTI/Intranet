@@ -1,34 +1,20 @@
-const INITIAL_STATE = {
-    collaborateur: []
-}
+import { createSlice } from '@reduxjs/toolkit'
+
+const initialState = [];
 
 
-function collabReducer(state = INITIAL_STATE, action){
+export const collabSlice = createSlice({
+  name: 'collab',
+  initialState,
+  reducers: {
+    setcollab: (state, action) => {
+       return state.value += action.payload
+    },
+    
+  },
+})
 
-    switch(action.type){
-        case "LOADARTICLES": {
-            return {
-                ...state,
-                collaborateur: action.payload
-            }
-        }
-    }
+// Action creators are generated for each case reducer function
+export const { setcollab } = collabSlice.actions
 
-    return state;
-}
-export default collabReducer;
-
-
-
-export const getArticles = () => dispatch => {
-
-    fetch("https://jsonplaceholder.typicode.com/posts")
-    .then(response => response.json())
-    .then(data => {
-        dispatch({
-            type: 'LOADARTICLES',
-            payload: data
-        })
-    })
-
-}
+export default collabSlice.reducer

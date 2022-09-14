@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -27,21 +28,20 @@ export default function Navbar() {
       {(toggleMenu || largeur > 500) && (
         <ul className="liste">
           <li className="items">
-            <Link to="/Home">Accueil</Link>
+            <Link to="Home">Accueil</Link>
           </li>
           <li className="items">
-            <Link to="/listing">Liste</Link>
+            <Link to="listing">Liste</Link>
           </li>
           <li className="items">
             <Link to="/">
-              <button>Connexion</button>
+            <Button variant="contained" className="btn">
+            Connexion
+            </Button>
             </Link>
           </li>
         </ul>
       )}
-      <button onClick={toggleNav} className="btn">
-        BTN
-      </button>
     </nav>
   );
 }
