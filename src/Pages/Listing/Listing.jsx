@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from "react";
 import Card from "../../Components/Card/Card";
-import './Listing.css'
 import {getAllUser} from '../../Service/getRandomUser.service';
+import Navbar from "../../Components/Navbar/Navbar";
+
+// Styles
+import './Listing.css'
 
 
-export default function () {
+export default function Listing() {
   const [userAll, setUserAll] = useState(null);
 
   const getUserAll = async () => {
@@ -19,7 +22,8 @@ export default function () {
   }, []);
 
   return (
-    <div className="cardflex">
+    <>
+      <Navbar />
       <br />
       <br />
       <br />
@@ -28,6 +32,6 @@ export default function () {
       userAll.map(user => <Card key={user.id} user={user}/>)
       }
      
-    </div>
+    </>
   );
 }

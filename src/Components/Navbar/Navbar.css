@@ -6,7 +6,7 @@ nav {
     background: linear-gradient(45deg, rgb(52, 231, 12), midnightblue);
 }
 
-.liste {
+.listenav {
     list-style-type: none;
     background: linear-gradient(45deg, rgb(42, 171, 53), midnightblue);
     height: 100%;
@@ -15,48 +15,63 @@ nav {
     align-items: center;
     position: relative;
     font-size: 22px;
+    color: #f1f1f1;
 }
-.items {
+.itemsnav {
     color: #f1f1f1;
     cursor: pointer;
     margin: 0 15px;
     text-transform: uppercase;
 }
-.items a {
+.itemsnav a {
     color: #f1f1f1;
     text-decoration: none;
 }
-.btn {
-    display: block;
+.btnburger {
+    display: none;
     position: absolute;
-    left: 150px;
+    align-items: center;
+    bottom: 5px;
+    right: 10px;
     padding: 5px;
     color: #000;
     font-size: 18px;
 }
+.itemsNavActive {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.603);
+    line-height: 70px;
+    text-align: center;
+    background: linear-gradient(45deg, rgb(42, 171, 53), midnightblue);
 
-@media screen and (max-width: 500px){
+}
 
-    .liste {
+@media all and (max-width: 500px){
+
+    .listenav {
         flex-direction: column;
         height: auto;
+        display: none;
+        background: linear-gradient(45deg, rgb(42, 171, 53), midnightblue);
+
     }
-    .items:nth-child(1){
+    .itemsnav:nth-child(1){
         border-top: 1px solid rgba(255, 255, 255, 0.603);
         margin-top: 50px;
     }
-    .items {
-        height: 70px;
+   
+    .itemsNavActive {
+        display: block;
         width: 100%;
         border-top: 1px solid rgba(255, 255, 255, 0.603);
         line-height: 70px;
         text-align: center;
+        background: linear-gradient(45deg, rgb(42, 171, 53), midnightblue);
+
     }
-    .items a {
-        color: #f1f1f1;
-        text-decoration: none;
-    }
-    .btn {
+    .btnburger {
         display: block;
     }
 }
+

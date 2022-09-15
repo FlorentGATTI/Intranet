@@ -1,47 +1,60 @@
 import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+// Styles
 import "./Navbar.css";
-import { Link } from "react-router-dom";
-import Button from "@mui/material/Button";
 
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [largeur, setLargeur] = useState(window.innerWidth);
 
   const toggleNav = () => {
     setToggleMenu(!toggleMenu);
+    navigate("/");
   };
 
   useEffect(() => {
-    const changeWidth = () => {
-      setLargeur(window.innerWidth);
-    };
-
-    window.addEventListener("resize", changeWidth);
-
-    return () => {
-      window.removeEventListener("resize", changeWidth);
-    };
+    if (window.innerWidth < 500) {
+      setToggleMenu(true);
+    }
   }, []);
+
+  const navigate = useNavigate();
+
+  const toggleDisplay = () => {
+    setToggleMenu(!toggleMenu);
+  };
 
   return (
     <nav>
-      {(toggleMenu || largeur > 500) && (
-        <ul className="liste">
-          <li className="items">
-            <Link to="Home">Accueil</Link>
-          </li>
-          <li className="items">
-            <Link to="listing">Liste</Link>
-          </li>
-          <li className="items">
-            <Link to="/">
-            <Button variant="contained" className="btn">
+      <ul className={toggleMenu ? "itemsNavActive" : "listenav"}>
+        <li className="itemsnav">
+          <Link
+            to={{
+              pathname: "/Home",
+            }}
+          >
+            Accueil
+          </Link>
+        </li>
+        <li className="itemsnav">
+          <Link
+            to={{
+              pathname: "/Listing",
+            }}
+          >
+            Liste
+          </Link>
+        </li>
+        <li className="itemsnav">
+          <button onClick={toggleNav} className="btn">
             Connexion
-            </Button>
-            </Link>
-          </li>
-        </ul>
-      )}
+          </button>
+        </li>
+      </ul>
+
+      <button className="btnburger" onClick={toggleDisplay}>
+        burger
+      </button>
     </nav>
   );
 }

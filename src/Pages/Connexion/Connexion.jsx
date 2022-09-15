@@ -1,12 +1,12 @@
 import React from "react";
-import "./Connexion.css";
-
 import { useForm } from "react-hook-form";
 import {useSelector, useDispatch} from 'react-redux';
 import { setconnex } from '../../Redux/features/connexReducer';
 import { getConnexData } from "../../Service/connex.service";
 import { useNavigate } from "react-router-dom";
 
+// Styles
+import "./Connexion.css";
 
 
 const Form = () => {
@@ -41,12 +41,11 @@ const Form = () => {
     getUser(data);
   };
 
-
+// Formulaire de connexion 
   return (
-    <>
-      <h1>Connexion</h1>
-      <div className="wrapper">
-        <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="wrapper container-login100 wrap-login100 limiter ">
+        <form className="login100-form validate-form" onSubmit={handleSubmit(onSubmit)}>
+        <h1>Connexion</h1>
           <legend>Pour vous connecter à l'intranet, entrez votre identifiant et mot de passe.</legend>
           <fieldset>
             <div className="formInput">
@@ -75,8 +74,8 @@ const Form = () => {
             <button type="submit">Connexion</button>
           </fieldset>
         </form>
+        <div className="login100-more bg-img" ></div>
       </div>
-    </>
   );
 };
 
