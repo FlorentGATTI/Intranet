@@ -1,16 +1,20 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Card from "../../Components/Card/Card";
+import {getAllUser} from '../../Service/getRandomUser.service';
+import Navbar from "../../Components/Navbar/Navbar";
 
-export default function Infos() {
+// Styles
+import './Infos.css'
+
+
+export default function Listing() {
+  const [userAll, setUserAll] = useState(null);
+
   return (
-    <div>
+    <>
+      <Navbar />
       <br />
-      <br />
-      <br />
-      <h1>Infos</h1>
-      <Card>
-        <h2>Infos perso</h2>
-      </Card>
-    </div>
+      <h1>Informations Utilisateurs</h1>
+    </>
   );
 }

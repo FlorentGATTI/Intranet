@@ -26,6 +26,7 @@ const Form = () => {
     const collabArray = await getConnexData(data);
     // console.log(collabArray.token);    
     localStorage.setItem('token', JSON.stringify(collabArray.token));
+    localStorage.setItem('AllArray', JSON.stringify(collabArray));
     dispatch(setconnex());
     navigate("/Home");
   };

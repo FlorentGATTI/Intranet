@@ -6,10 +6,8 @@
     cursor: pointer;
     min-height: 200px;
     min-width: 300px;
-    text-align: left;
+    text-align: center;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 .card h2 {
     font-size: 25px;

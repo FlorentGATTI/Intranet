@@ -1,0 +1,11 @@
+.cardflexs {
+    display: block;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.padcards {
+    padding-top: 2rem;
+}

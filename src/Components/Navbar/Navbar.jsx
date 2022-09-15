@@ -39,7 +39,7 @@ export default function Navbar() {
         <li className="itemsnav">
           <Link
             to={{
-              pathname: "/Listing",
+              pathname: "/Liste",
             }}
           >
             Liste

@@ -23,15 +23,17 @@ export default function Listing() {
 
   return (
     <>
-      <Navbar />
-      <br />
-      <br />
-      <br />
-      <h1>Page de listing !</h1>
+      <Navbar />  
+      <div className='container padcard'>
+      <div className="cardflex">
+      <h1 className="text-center">Liste de collaborateurs</h1>
+
       {userAll && 
       userAll.map(user => <Card key={user.id} user={user}/>)
-      }
-     
+      }   
+      </div>
+      </div>
+        
     </>
   );
 }
