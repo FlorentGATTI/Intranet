@@ -37,3 +37,9 @@ body {
   font-family: Montserrat-Bold;
   src: url("../styles/font/Montserrat-Bold.ttf");
 }
+
+@font-face {
+  font-family: Poppins-italic;
+  src: url("../styles/font/Poppins-Italic.ttf");
+}
+

@@ -35,13 +35,13 @@ const Form = () => {
 
   // Formulaire de connexion
   return (
-    <div className="wrapper container-login100 wrap-login100 limiter ">
+    <div className="wrapper container-login100 wrap-login100 limiter d-flex text-center fontita">
       <form className="login100-form validate-form" onSubmit={handleSubmit(onSubmit)}>
-        <h1>Connexion</h1>
-        <legend>Pour vous connecter à l'intranet, entrez votre identifiant et mot de passe.</legend>
+        <h1 className="ft-2">Connexion</h1>
+        <legend className="ft-2">Pour vous connecter à l'intranet,<br /> entrez votre identifiant et mot de passe.</legend>
         <fieldset>
           <div className="formInput">
-            <label>Email</label>
+            <label className="me-3">Email :</label>
             <input
               type="email"
               {...register("email", {
@@ -52,8 +52,8 @@ const Form = () => {
             <span className="errorMsg">{errors.email && "Merci de rentrer une adresse valide !"}</span>
           </div>
 
-          <div className="formInput">
-            <label>Mot de passe</label>
+          <div className="formInput pt-1">
+            <label className="me-3">Mot de passe :</label>
             <input
               type="password"
               {...register("password", {
@@ -63,7 +63,7 @@ const Form = () => {
             />
             <span className="errorMsg">{errors.password && "Le mot de passe est requis !"}</span>
           </div>
-          <button type="submit">Connexion</button>
+          <button className="btnstyle" type="submit"><em>Connexion</em></button>
         </fieldset>
       </form>
       <div className="login100-more bg-img"></div>

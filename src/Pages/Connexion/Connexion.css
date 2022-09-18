@@ -24,6 +24,12 @@ form {
   background-image: url("../../../images/img3.jpg");
 }
 
+/* Font */
+
+.fontita {
+  font-family: Poppins-italic;
+}
+
 /*==================================================================
   [ Size ]*/
 .size1 {
@@ -105,7 +111,7 @@ form {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  padding: 103px 65px 40px 5px;
+  padding: 180px 65px 40px 25px;
 }
 
 .login100-form-title {
@@ -154,7 +160,7 @@ input.input100 {
   height: 55px;
 }
 
-/*---------------------------------------------*/
+/*---------------------Input------------------------*/
 
 .focus-input100 {
   position: absolute;
@@ -236,6 +242,18 @@ input.input100 {
   background: #333333;
 }
 
+.btnstyle {
+  background-color: #a28764; 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 /*------------------------------------------------------------------
   [ Responsive ]*/
 @media (max-width: 600px) {
@@ -243,6 +261,11 @@ input.input100 {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 150px;
+  }
+  .d-flex {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
   }
 
   .rs1-wrap-input100,
@@ -253,4 +276,14 @@ input.input100 {
   .rs2-wrap-input100 {
     border-left: 1px solid #e6e6e6;
   }
+}
+
+@media (max-width: 1450px) {
+  .login100-form {
+    font-size: 1rem;
+  }
+  .ft-2 {
+    font-size: 1rem;
+  }
+
 }

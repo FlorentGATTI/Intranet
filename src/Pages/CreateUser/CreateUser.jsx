@@ -31,7 +31,7 @@ export default function CreateUser() {
   return (
     <>
       <Navbar />
-      <h1 className="text-center mt-4">Créer un utilisateur</h1>
+      <h1 className="text-center mt-4"><em>Créer un utilisateur</em></h1>
       <Form onSubmit={handleSubmit(onSubmit)} className="w-50 mx-auto pt-5">
         <Form.Group className="mb-3 ">
           <Form.Label>* Civilité :</Form.Label>
@@ -86,7 +86,7 @@ export default function CreateUser() {
           <Form.Control {...register("photo")} type="text" placeholder="..." required />
         </Form.Group>
         <button className="modifbtn mx-auto mt-3 mb-5" href="/Listing" type="submit">
-          Créer
+         <em>Créer</em> 
         </button>
       </Form>
     </>

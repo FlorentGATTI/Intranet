@@ -24,12 +24,12 @@ export default function Home() {
       <Navbar />
       <div className="container padcards text-center mx-auto">
         <div className="cardflexs mx-auto">
-          <h1>Bienvenue sur l'intranet !</h1>
+          <h1 className="pb-2"><em>Bienvenue sur l'intranet !</em></h1>
           <p>La plate-forme de l'entreprise qui vous permet de retrouver tous vos collaborateurs.</p>
-          <h2>Avez-vous dis bonjour à :</h2>
+          <h2 className="pb-1"><em>Avez-vous dis bonjour à :</em></h2>
           <div className="mx-auto">{user && <Card user={user} />}</div>
           <button className="btnmodify" onClick={getUser}>
-            Dire bonjour à quelqu'un d'autre
+           <em>Dire bonjour à quelqu'un d'autre</em> 
           </button>
         </div>
       </div>

@@ -2,5 +2,9 @@ nav {
   position: sticky;
   top: 0;
   width: 100%;
-  background: linear-gradient(45deg, rgb(52, 231, 12), midnightblue);
+  background-color: #a28764 !important;
+}
+
+.nav-link{
+  color: white !important;
 }

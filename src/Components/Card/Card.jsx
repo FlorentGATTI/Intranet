@@ -37,27 +37,27 @@ export default function Card({ user }) {
           <img src={user.photo} alt={`photo de ${user.firstname}`} />
         </div>
         <div className="card-body">
-          {user.service}
+         <strong><em>{user.service}</em></strong> 
           <br />
-          {user.firstname} {user.lastname} ({getAge(user.birthdate) + " ans"})
+         - {user.firstname} {user.lastname} ({getAge(user.birthdate) + " ans"})
           <br />
-          {user.city}, {user.country}
+         - {user.city}, {user.country}
           <br />
-          <a href={`mailto:${user.email.replaceAll("-", " ")}`}>{user.email}</a>
+          <a className="ft-a" href={`mailto:${user.email.replaceAll("-", " ")}`}>- {user.email}</a>
           <br />
-          <a href={`tel:+${user.phone.replaceAll("-", " ")}`}>{user.phone}</a>
+          <a className="ft-a" href={`tel:+${user.phone.replaceAll("-", " ")}`}>- {user.phone}</a>
           <br />
-          Anniversaire : {new Date(`${user.birthdate}`).toLocaleString("FR-fr", { day: "numeric", month: "long" })}
+         - Anniversaire : {new Date(`${user.birthdate}`).toLocaleString("FR-fr", { day: "numeric", month: "long" })}
           <br />
           <Link
             to={{
               pathname: `/ModifyUser${user.id}`,
             }}
           >
-            <button className="btnmodif">Editer</button>
+            <button className="btnmodif"><em>Editer</em></button>
           </Link>
           <button className="btnmodif1" onClick={onDelete}>
-            Supprimer
+           <em>Supprimer</em> 
           </button>
         </div>
       </div>
