@@ -1,53 +1,43 @@
 import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 // import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import 'bootstrap/dist/css/bootstrap.css';
+import Form from "react-bootstrap/Form";
+import "bootstrap/dist/css/bootstrap.css";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
-
-//Styles 
+//Styles
 import "./CreateUser.css";
 
 export default function CreateUser() {
-  const {id} = useParams();
-console.log("id", id);
+  const { id } = useParams();
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (userdata) => {
-    console.log("userdata", userdata);
     addUser(userdata);
-  }
+  };
 
-  const addUser = async(data) => {
-      const token = localStorage.getItem('token');
-    console.log("token", token);
-    console.log(`Bearer ${JSON.parse(token)}`);
+  const addUser = async (data) => {
+    const token = localStorage.getItem("token");
     try {
-      const rescollab = await axios.post(`http://localhost:7000/api/collaborateurs`,
-      data,
-       { headers: 
-        { Authorization: `Bearer ${JSON.parse(token)} ` }
-        });
-    console.log("rescollab", rescollab.data);
+      const rescollab = await axios.post(`http://localhost:7000/api/collaborateurs`, data, { headers: { Authorization: `Bearer ${JSON.parse(token)} ` } });
       return rescollab.data;
     } catch (error) {
       console.log(error);
     }
-    };
+  };
 
-    return (
-      <>
-        <Navbar />
-        <h1 className="text-center">Créer un utilisateur</h1>
-        <Form onSubmit={handleSubmit(onSubmit)} className="w-50 mx-auto pt-5">
+  return (
+    <>
+      <Navbar />
+      <h1 className="text-center mt-4">Créer un utilisateur</h1>
+      <Form onSubmit={handleSubmit(onSubmit)} className="w-50 mx-auto pt-5">
         <Form.Group className="mb-3 ">
           <Form.Label>* Civilité :</Form.Label>
           <Form.Select {...register("gender")} aria-label="Default select example">
             <option>Open this select menu</option>
-            <option  value="female">female</option>
+            <option value="female">female</option>
             <option value="male">male</option>
           </Form.Select>
         </Form.Group>
@@ -95,10 +85,10 @@ console.log("id", id);
           <Form.Label>* Image :</Form.Label>
           <Form.Control {...register("photo")} type="text" placeholder="..." required />
         </Form.Group>
-        <button className="modifbtn mx-auto" type="submit">
+        <button className="modifbtn mx-auto mt-3 mb-5" href="/Listing" type="submit">
           Créer
         </button>
       </Form>
-      </>
-    );
+    </>
+  );
 }

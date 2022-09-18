@@ -7,7 +7,7 @@ export const connexSlice = createSlice({
   initialState,
   reducers: {
     setconnex: (state = initialState, action) => {
-      state.value += action.payload
+      state.value += action.payload;
     },
   },
 });

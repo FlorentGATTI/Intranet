@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ModifyUser from "../../Pages/ModifyUser/ModifyUser";
 import axios from "axios";
 
 //styles
@@ -24,6 +23,7 @@ export default function Card({ user }) {
     try {
       const rescollab = await axios.delete(`http://localhost:7000/api/collaborateurs/${user.id}`, { headers: { Authorization: `Bearer ${JSON.parse(token)} ` } });
       console.log("rescollab", rescollab.data);
+      location.reload();
       return rescollab.data;
     } catch (error) {
       console.log(error);
@@ -46,19 +46,19 @@ export default function Card({ user }) {
           <a href={`mailto:${user.email.replaceAll("-", " ")}`}>{user.email}</a>
           <br />
           <a href={`tel:+${user.phone.replaceAll("-", " ")}`}>{user.phone}</a>
-          <br/>
+          <br />
           Anniversaire : {new Date(`${user.birthdate}`).toLocaleString("FR-fr", { day: "numeric", month: "long" })}
           <br />
-            <Link
-              to={{
-                pathname: `/ModifyUser${user.id}`,
-              }}
-            >
-              <button className="btnmodif">Editer</button>
-            </Link>
-            <button className="btnmodif1" onClick={onDelete}>
-              Supprimer
-            </button>
+          <Link
+            to={{
+              pathname: `/ModifyUser${user.id}`,
+            }}
+          >
+            <button className="btnmodif">Editer</button>
+          </Link>
+          <button className="btnmodif1" onClick={onDelete}>
+            Supprimer
+          </button>
         </div>
       </div>
     </div>

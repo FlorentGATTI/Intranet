@@ -1,24 +1,24 @@
 .card {
-    max-width: 300px;
-    padding: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    margin: 10px;
-    cursor: pointer;
-    min-height: 200px;
-    min-width: 300px;
-    text-align: center;
-    display: flex;
+  width: 290px;
+  padding: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  cursor: pointer;
+  min-height: 200px;
+  min-width: 300px;
+  text-align: center;
+  display: flex;
 }
 .card h2 {
-    font-size: 25px;
-    margin-bottom: 10px;
+  font-size: 25px;
+  margin-bottom: 10px;
 }
 .card p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .btnmodif {
-  background-color: #4CAF50; /* Green */
+  background-color: #4caf50; /* Green */
   border: none;
   color: white;
   padding: 10px 20px;
@@ -30,17 +30,17 @@
 }
 
 .btnmodif1 {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
-.img-square-wrapper img{
-    width: 128px;
-    height: 128px;
+.img-square-wrapper img {
+  width: 128px;
+  height: 128px;
 }

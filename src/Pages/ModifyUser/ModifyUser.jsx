@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
-// import Button from 'react-bootstrap/Button';
 import Form from "react-bootstrap/Form";
 import "bootstrap/dist/css/bootstrap.css";
 import { useForm } from "react-hook-form";
@@ -12,24 +11,22 @@ import "./ModifyUser.css";
 
 export default function ModifyUser() {
   const { id } = useParams();
-  console.log("id", id);
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (userdata) => {
-    console.log("userdata", userdata);
     putModifyUser(id, userdata);
   };
 
   return (
     <>
       <Navbar />
-      <h1 className="text-center">Modifier un utilisateur</h1>
+      <h1 className="text-center mt-4">Modifier un utilisateur</h1>
       <Form onSubmit={handleSubmit(onSubmit)} className="w-50 mx-auto pt-5">
         <Form.Group className="mb-3 ">
           <Form.Label>* Civilité :</Form.Label>
           <Form.Select {...register("gender")} aria-label="Default select example">
             <option>Open this select menu</option>
-            <option  value="female">female</option>
+            <option value="female">female</option>
             <option value="male">male</option>
           </Form.Select>
         </Form.Group>
@@ -77,7 +74,7 @@ export default function ModifyUser() {
           <Form.Label>* Image :</Form.Label>
           <Form.Control {...register("photo")} type="text" placeholder="..." required />
         </Form.Group>
-        <button className="modifbtn mx-auto" type="submit">
+        <button className="modifbtn mx-auto mt-3 mb-5" type="submit">
           Modifier
         </button>
       </Form>

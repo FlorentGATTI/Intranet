@@ -3,7 +3,6 @@ import Card from "../../Components/Card/Card";
 import { getAllUser } from "../../Service/getRandomUser.service";
 import Navbar from "../../Components/Navbar/Navbar";
 import Search from "../../Components/Search/Search";
-// import { useSelector } from "react-redux";
 
 // Styles
 import "./Listing.css";
@@ -14,7 +13,6 @@ export default function Listing() {
 
   const getUserAll = async () => {
     const collabArray = await getAllUser();
-    console.log("data : ", collabArray);
     setUserAll(collabArray);
     setFilteredUserAll(collabArray);
   };
@@ -22,13 +20,6 @@ export default function Listing() {
   useEffect(() => {
     getUserAll();
   }, []);
-
-  // useSelector()
-
-  // if datauser n'a pas de donnés / dataUser = userAll
-  // if(!datauser) {
-  //   setFilteredUserAll(userAll)
-  // }
 
   return (
     <>
