@@ -24,17 +24,17 @@ const Form = () => {
 
   const getUser = async (data) => {
     const collabArray = await getConnexData(data);
-    // console.log(collabArray.token);    
+    console.log("collabarray",collabArray);    
     localStorage.setItem('token', JSON.stringify(collabArray.token));
-    localStorage.setItem('AllArray', JSON.stringify(collabArray));
     dispatch(setconnex());
     navigate("/Home");
   };
 
-
-  // useEffect(() => {
-  //     dispatch(getcolabdata());
-  // }, []);
+  const disconnect = (event) => {
+    event.preventDefault();
+    storage.removeItem(token);
+    navigate("/")
+  }
 
   const onSubmit = (data, event) => {
     event.preventDefault();

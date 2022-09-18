@@ -110,7 +110,7 @@ form {
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
-    padding: 303px 65px 40px 65px;
+    padding: 103px 65px 40px 5px;
   }
   
   .login100-form-title {
@@ -250,30 +250,7 @@ form {
   
   /*------------------------------------------------------------------
   [ Responsive ]*/
-  
-  @media (max-width: 992px) {
-    .login100-form {
-      width: 60%;
-      padding-left: 30px;
-      padding-right: 30px;
-    }
-  
-    .login100-more {
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .login100-form {
-      width: 100%;
-    }
-  
-    .login100-more {
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 576px) {
+  @media (max-width: 600px) {
     .login100-form {
       padding-left: 15px;
       padding-right: 15px;
@@ -289,6 +266,7 @@ form {
       border-left: 1px solid #e6e6e6;
     }
   }
+  
   
  
   

@@ -2,6 +2,9 @@ import axios from "axios";
 
 // Appel API GET
 
+
+// Pour générer un collab aléatoire
+
 export const getRandomUser = async () => {
 
   const token = localStorage.getItem('token');
@@ -16,6 +19,7 @@ export const getRandomUser = async () => {
   }
 };
 
+// Pour générer tout les collabs
 
 export const getAllUser = async () => {
 

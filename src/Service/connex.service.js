@@ -1,8 +1,5 @@
 import axios from "axios";
 
-
-
-
 export const getConnexData = async (data) => {
   // console.log("ma data :", data);
   try {

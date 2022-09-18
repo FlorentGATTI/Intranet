@@ -10,7 +10,14 @@ export const collabSlice = createSlice({
     setcollab: (state, action) => {
        return state.value += action.payload
     },
-    
+    filterCollab: (state, action) => {
+      const searchTerm = action.payload.searchTerm;
+
+      const collabFound = state.value.filter((collab) => {
+        collab.data.includes(searchTerm);
+      });
+      return {...state, filteredCollab : collabFound}
+    },
   },
 })
 

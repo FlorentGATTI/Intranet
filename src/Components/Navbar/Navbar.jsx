@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { getAllUser } from "../../Service/getRandomUser.service";
+
 
 // Styles
 import "./Navbar.css";
@@ -9,6 +11,7 @@ export default function Navbar() {
 
   const toggleNav = () => {
     setToggleMenu(!toggleMenu);
+    localStorage.removeItem("token");
     navigate("/");
   };
 
@@ -23,6 +26,8 @@ export default function Navbar() {
   const toggleDisplay = () => {
     setToggleMenu(!toggleMenu);
   };
+
+  
 
   return (
     <nav>
@@ -46,12 +51,25 @@ export default function Navbar() {
           </Link>
         </li>
         <li className="itemsnav">
-          <button onClick={toggleNav} className="btn">
-            Connexion
-          </button>
-        </li>
+        <Link
+            to={{
+              pathname: "/CreateUser",
+            }} onClick={() => toggleDisplay()}
+          >
+            AddUser
+          </Link>
+        </li> 
+        <li className="itemsnav">
+        <Link
+            to={{
+              pathname: "/",
+            }} onClick={() => toggleNav()}
+          >
+          {/* <img src={user.photo} alt="Photo de l'utilisateur" /> */}
+            Deconnexion
+          </Link>
+        </li> 
       </ul>
-
       <button className="btnburger" onClick={toggleDisplay}>
         burger
       </button>
